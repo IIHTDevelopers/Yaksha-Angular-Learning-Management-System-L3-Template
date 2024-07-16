@@ -1,0 +1,11 @@
+<div class="course-detail-container" *ngIf="course">
+    <h2>{{ course.title }}</h2>
+    <p><strong>Description:</strong> {{ course.description }}</p>
+    <p><strong>Instructor:</strong> {{ course.instructor }}</p>
+    <p><strong>Start Date:</strong> {{ course.startDate | date }}</p>
+    <p><strong>End Date:</strong> {{ course.endDate | date }}</p>
+    <button class="btn btn-primary" (click)="goBack()">Back to Courses</button>
+</div>
+<div *ngIf="!course">
+    <p>Loading course details...</p>
+</div>

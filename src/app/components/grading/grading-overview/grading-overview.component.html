@@ -1,0 +1,27 @@
+<div class="grading-overview-container">
+    <h2>Grading Overview</h2>
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Course</th>
+                <th>Assignment</th>
+                <th>Score</th>
+                <th>Feedback</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let grade of grades">
+                <td>{{ grade.studentName }}</td>
+                <td>{{ getCourseTitle(grade.courseId) }}</td>
+                <td>{{ grade.assignment }}</td>
+                <td>{{ grade.score }}</td>
+                <td>{{ grade.feedback }}</td>
+                <td>
+                    <button class="btn btn-danger" (click)="deleteGrade(grade.id)">Delete</button>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

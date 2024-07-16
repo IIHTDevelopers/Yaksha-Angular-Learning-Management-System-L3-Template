@@ -1,0 +1,11 @@
+<div class="enrollment-list-container">
+    <h2>Enrollments</h2>
+    <ul class="enrollment-list">
+        <li *ngFor="let enrollment of enrollments">
+            <h3>{{ enrollment.studentName }}</h3>
+            <p><strong>Course:</strong> {{ getCourseTitle(enrollment.courseId) }}</p>
+            <p><strong>Enrollment Date:</strong> {{ enrollment.enrollmentDate | date }}</p>
+            <button class="btn btn-danger" (click)="deleteEnrollment(enrollment.id)">Delete</button>
+        </li>
+    </ul>
+</div>
